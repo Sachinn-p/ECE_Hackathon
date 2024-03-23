@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Lender Dashboard</title>
+</head>
+<body>
+    <h2>Lender Dashboard</h2>
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+            <a href="./view_loan_requests.html" style="color:blue">Click here!</a>
+        </form>
+    </div>
+</body>
+</html>

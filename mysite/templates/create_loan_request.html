@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Loan Request</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Create Loan Request</h1>
+        <form action="{% url 'create_loan_request' %}" method="POST">
+            {% csrf_token %}
+            <label for="amount">Amount:</label><br>
+            <input type="number" id="amount" name="amount" required><br>
+            <label for="description">Description:</label><br>
+            <textarea id="description" name="description" required></textarea><br>
+            <button type="submit">Submit</button>
+        </form>
+        <a href="{% url 'view_loan_requests' %}">View Loan Requests</a>
+    </div>
+</body>
+</html>

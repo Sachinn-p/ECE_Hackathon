@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>Login</header>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <label for="role">Select Role:</label>
+            <select name="role" id="role" required>
+                <option value="" disabled selected>Select Role</option>
+                <option value="borrower">Borrower</option>
+                <option value="lender">Lender</option>
+            </select>
+            <button type="submit">Login</button>
+        </form>
+        <!-- Optional: Add a link to the registration page -->
+        <p>Don't have an account? <a href="{% url 'register' %}" style="color: blue;">Register</a></p>
+    </div>
+</body>
+</html>
